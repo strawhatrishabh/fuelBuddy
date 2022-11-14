@@ -1,9 +1,26 @@
 <template>
   <div class="container mx-auto">
-    <p>dashboard</p>
-    <div class="shadow-lg rounded-lg overflow-hidden">
-        <div class="py-3 px-5 bg-gray-50">Line chart</div>
-        <canvas id="myChart"></canvas>
+    <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+    <div class="md:w-6/12 lg:w-5/12 mb-12 md:mb-0">
+      <div class="shadow-lg rounded-lg overflow-hidden">
+          <canvas id="myChart1"></canvas>
+      </div>
+    </div>
+    <div class="md:w-6/12 lg:w-5/12 mb-12 md:mb-0">
+      <div class="shadow-lg rounded-lg overflow-hidden">
+          <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+    <div class="md:w-6/12 lg:w-5/12 mb-12 md:mb-0">
+      <div class="shadow-lg rounded-lg overflow-hidden">
+          <canvas id="myChart3"></canvas>
+      </div>
+    </div>
+    <div class="md:w-6/12 lg:w-5/12 mb-12 md:mb-0">
+      <div class="shadow-lg rounded-lg overflow-hidden">
+          <canvas id="myChart4"></canvas>
+      </div>
+    </div>
     </div>
   </div>
 </template>
@@ -42,8 +59,20 @@ export default {
         }
     },
     mounted() {
-        const myChart = new Chart(
-            document.getElementById('myChart'),
+        const myChart1 = new Chart(
+            document.getElementById('myChart1'),
+            config
+        );
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config
+        );
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config
+        );
+        const myChart4 = new Chart(
+            document.getElementById('myChart4'),
             config
         );
     }

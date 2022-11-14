@@ -13,7 +13,7 @@
             <div class="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
         </div>
     </div>
-    <section class="h-screen">
+    <section>
       <div class="container h-full">
         <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
