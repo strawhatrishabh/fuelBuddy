@@ -8,13 +8,14 @@
             </div>
         </div>
     </div> -->
-    <div class="container h-full" v-if="screenLoader">
+    <!-- v-if="screenLoader" -->
+    <div class="container h-full fixed block top-50 left-50 z-50" v-if="screenLoader">
         <div class="flex items-center justify-center ">
             <div class="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
         </div>
     </div>
-    <section>
-      <div class="container h-full">
+    <div>
+      <div class="container h-full" :class="screenLoader? 'opacity-25 z-30' : ''">
         <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
             <img
@@ -30,7 +31,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
