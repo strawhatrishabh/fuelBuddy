@@ -25,6 +25,7 @@ const analytics = getAnalytics(app);
 export const useLoginStore = defineStore('login', {
     state: () => {
         return {
+            name: '',
             username: '',
             password: '',
             validInput: false,
@@ -35,6 +36,23 @@ export const useLoginStore = defineStore('login', {
     // could also be defined as
     // state: () => ({ count: 0 })
     actions: {
+        async createFirebaseUser() {
+            this.screenLoader = true;
+            const auth = getAuth();
+            var that = this;
+            await createUserWithEmailAndPassword(auth, this.username, this.password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    that.loggedUser = user.email;
+                    return that.loggedUser
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                }).finally(() => {
+                    this.screenLoader = false
+                });
+        },
         async authenticateFirebase() {
             this.screenLoader = true
             const auth = getAuth();

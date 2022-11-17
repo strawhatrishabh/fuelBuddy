@@ -7,7 +7,7 @@
         :class="inputValue || validateType ? '' : 'border-red-500'"
         :id="type"
         :type="type"
-        placeholder="******************"
+        :placeholder="type"
         v-model="inputValue"
         @input="validateType = false; validateInput()"
       />
@@ -54,6 +54,9 @@ export default {
           loginStore.validInput = false;
         }
         loginStore.password = this.inputValue;
+      }
+      if(this.type == 'name') {
+        loginStore.name = this.inputValue;
       }
     }
   }
